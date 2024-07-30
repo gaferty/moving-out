@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import ItemCard from '@/components/itemCard';
-import { Card, CardBody, CardFooter, Image } from '@nextui-org/react';
-import { useRouter } from 'next/navigation';
-import React from 'react'
+import React from "react";
+
+import ItemCard from "@/components/itemCard";
 
 export default function page() {
-  const list = [{
+  const list = [
+    {
       id: 1,
       title: "Desk",
       price: 9.99,
@@ -29,18 +29,23 @@ export default function page() {
       title: "Book 2",
       price: 9.99,
       image: "/images/fruit-1.jpeg",
-  },
-
-];
-
+    },
+  ];
 
   return (
     <div>
       <div className="gap-2 grid grid-cols-1  lg:grid-cols-4 sm:grid-cols-2">
         {list.map((item) => (
-         <ItemCard id = {item.id} title={item.title} price={item.price} key ={item.id} image={item.image} status=""/>
+          <ItemCard
+            key={item.id}
+            id={item.id}
+            image={item.image}
+            price={item.price}
+            status=""
+            title={item.title}
+          />
         ))}
       </div>
     </div>
-  )
+  );
 }

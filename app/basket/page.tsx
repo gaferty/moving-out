@@ -1,11 +1,12 @@
-'use client'
+"use client"
 
-import BasketCard from '@/components/cards/basketCard';
-import ItemCard from '@/components/itemCard';
-import Totals from '@/components/totals';
-import { Card, CardBody, CardFooter, Image } from '@nextui-org/react';
-import { useRouter } from 'next/navigation';
-import React, { useState, useEffect } from 'react'
+import { useRouter } from "next/navigation";
+
+import BasketCard from "@/components/cards/basketCard";
+import ItemCard from "@/components/itemCard";
+import Totals from "@/components/totals";
+import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
+import React, { useState, useEffect } from "react";
 
 type Item ={
   id: number;
@@ -15,7 +16,8 @@ type Item ={
 };
 
 export default function Page() {
-  const list: Item[]=[{
+  const list: Item[] = [
+    {
       id: 1,
       title: "Desk",
       price: 9.99,
@@ -57,14 +59,14 @@ export default function Page() {
   const [itemNumbers, setItemNumbers] = useState(0);
 
   useEffect(() => {
-    console.log('loading');
+    console.log("loading");
     setTotal(calcTotal(list));
     setItemNumbers(list.length);
   }, [])
 
   return (
     <div>
-      <div className='flex justify-center mb-2'>
+      <div className="flex justify-center mb-2">
         <Totals num={itemNumbers} total={total} />
       </div>
       <div className="mb-2 flex flex-col justify-items-center">

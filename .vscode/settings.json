@@ -1,3 +1,9 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.options": {
+
+  },
+  "eslint.format.enable": true,
+  "eslint.run": "onType",
+  "files.autoSave": "onFocusChange"
 }
