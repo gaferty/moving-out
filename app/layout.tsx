@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      {/* <head />
+      <head />
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
@@ -48,7 +48,7 @@ export default function RootLayout({
             <CompNavbar />
           </div>
         </Providers>
-      </body> */}
+      </body>
     </html>
   );
 }
