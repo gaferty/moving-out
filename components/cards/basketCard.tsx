@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
-import { Button, Card, CardBody, Image } from "@nextui-org/react";
-import { useRouter } from "next/navigation";
+'use client'
+import React from 'react'
+import { Button, Card, CardBody, CardFooter, Image } from '@nextui-org/react';
+import { useRouter } from 'next/navigation';
 export default function BasketCard(item: {
   title: string;
   id: number;
@@ -14,12 +14,7 @@ export default function BasketCard(item: {
   };
 
   return (
-    <Card
-      key={item.id}
-      isPressable
-      className="w-full my-2"
-      onPress={handlePress}
-    >
+    <Card key={item.id} isPressable onPress={handlePress} className="w-full my-2">
       <CardBody className="flex flex-row max-sm:flex-col justify-between">
         <Image
           alt={item.title}
@@ -28,7 +23,7 @@ export default function BasketCard(item: {
           src={item.image}
           width="100%"
         />
-        <div className="grow mx-10 max-sm:my-4">
+        <div className='grow mx-10 max-sm:my-4'>
           <b>{item.title}</b>
           <p className="text-default-500">{item.price}</p>
         </div>

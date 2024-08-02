@@ -13,8 +13,7 @@ type Item = {
 };
 
 export default function Page() {
-  const list: Item[] = [
-    {
+  const list: Item[]=[{
       id: 1,
       title: "Desk",
       price: 9.99,
@@ -62,7 +61,7 @@ export default function Page() {
 
   return (
     <div>
-      <div className="flex justify-center mb-2">
+      <div className='flex justify-center mb-2'>
         <Totals num={itemNumbers} total={total} />
       </div>
       <div className="flex justify-center mb-2">

@@ -1,9 +1,33 @@
-"use client";
-import { useState } from "react";
-import { Navbar, NavbarContent, NavbarBrand } from "@nextui-org/navbar";
-import { Link } from "@nextui-org/react";
-
+'use client'
+import {
+  Navbar,
+  NavbarContent,
+  NavbarMenu,
+  NavbarMenuToggle,
+  NavbarBrand,
+  NavbarItem,
+  NavbarMenuItem,
+} from "@nextui-org/navbar";
+import { Button } from "@nextui-org/button";
+import { Kbd } from "@nextui-org/kbd";
+import { Link } from "@nextui-org/link";
+import { Input } from "@nextui-org/input";
+import { link as linkStyles } from "@nextui-org/theme";
+import NextLink from "next/link";
+import clsx from "clsx";
+import { siteConfig } from "@/config/site";
+import { ThemeSwitch } from "@/components/theme-switch";
+import {
+  TwitterIcon,
+  GithubIcon,
+  DiscordIcon,
+  HeartFilledIcon,
+  SearchIcon,
+  Logo,
+} from "@/components/icons";
 import NavButtons from "./navButtons";
+import { Image } from "@nextui-org/react";
+import { useState } from "react";
 
 export const CompNavbar = () => {
   const links = [
@@ -11,14 +35,14 @@ export const CompNavbar = () => {
     { text: "Basket", link: "/basket" },
   ];
   const authentication = {
-    authenticated: {
-      text: "Account",
-      link: "/account",
+    authenticated:{
+      text:"Account",
+      link:"/account"
     },
-    unauthenticated: {
-      text: "Log in",
-      link: "/login",
-    },
+    unauthenticated:{
+      text:"Log in",
+      link:"/login"
+    }
   };
 
   const [enabled, setEnabled] = useState(false);
@@ -26,13 +50,13 @@ export const CompNavbar = () => {
   return (
     <Navbar className="sm:flex gap-4 bg-gray-100">
       <NavbarBrand>
-        <Link className="max-sm:hidden flex-none font-bold text-black" href="/">
-          MOVING AWAY
-        </Link>
+        <Link className="max-sm:hidden flex-none font-bold text-black" href='/'>
+        MOVING AWAY
+      </Link>
       </NavbarBrand>
       <NavbarContent className="grow flex gap-4 w-full" justify="center">
-        {links.map((link, index) => {
-          return <NavButtons key={index} link={link.link} text={link.text} />;
+        {links.map((link, index) =>{
+          return (<NavButtons text={link.text} link={link.link} key={index} />);
         })}
         {enabled ? (
           <NavButtons
